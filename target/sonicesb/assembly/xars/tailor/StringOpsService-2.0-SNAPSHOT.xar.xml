@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TailoringMaps xmlns="http://www.sonicsw.com/sonicxq" version="TailorMap8.0">
+  <ProcessMaps/>
+  <ServiceMaps/>
+  <EndpointMaps/>
+  <ConnectionMaps/>
+  <StringReplaceMaps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <stringReplaceMap updatedName="sonicfs:///ESBArtifacts/com/aurea/cx/messenger/example/StringOpsService/2.0-SNAPSHOT" name="sonicfs:///workspace/StringOpsService/target/generated-sources/annotations/sonicesb"/>
+    <stringReplaceMap updatedName="sonicfs:///ESBResources/com/aurea/cx/messenger/example/StringOpsService/2.0-SNAPSHOT/StringOpsService-2.0-SNAPSHOT" name="sonicfs:///workspace/StringOpsService/lib/StringOpsService"/>
+  </StringReplaceMaps>
+</TailoringMaps>

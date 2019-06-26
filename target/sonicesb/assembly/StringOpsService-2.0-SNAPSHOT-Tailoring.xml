@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TailoringRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sonicsw.com/sonicxq" xsi:schemaLocation="http://www.sonicsw.com/sonicxq http://ntsonicmqweb/B2B/schema/ESBTailorRules.xsd" version="1.0">
+  <DevEnvRules>
+    <stringReplaceMaps>
+      <stringReplaceMap updatedName="sonicfs:///ESBArtifacts/com/aurea/cx/messenger/example/StringOpsService/2.0-SNAPSHOT" name="sonicfs:///workspace/StringOpsService/target/generated-sources/annotations/sonicesb"/>
+      <stringReplaceMap updatedName="sonicfs:///ESBResources/com/aurea/cx/messenger/example/StringOpsService/2.0-SNAPSHOT/StringOpsService-2.0-SNAPSHOT" name="sonicfs:///workspace/StringOpsService/lib/StringOpsService"/>
+    </stringReplaceMaps>
+    <DevServiceMaps>
+      <devServiceMap updatedName="global.CBR" name="dev.CBR"/>
+      <devServiceMap updatedName="global.DBService" name="dev.DBService"/>
+      <devServiceMap updatedName="global.Transform" name="dev.Transform"/>
+      <devServiceMap updatedName="global.XMLServer" name="dev.XMLServer"/>
+      <devServiceMap updatedName="global.FilePickup" name="dev.FilePickup"/>
+      <devServiceMap updatedName="global.FileDrop" name="dev.FileDrop"/>
+      <devServiceMap updatedName="global.Splitter" name="dev.Splitter"/>
+      <devServiceMap updatedName="global.SJForEach" name="dev.SJForEach"/>
+      <devServiceMap updatedName="global.SJParallel" name="dev.SJParallel"/>
+      <devServiceMap updatedName="global.WMQJMSSender" name="dev.WMQJMSSender"/>
+      <devServiceMap updatedName="global.WMQJMSListener" name="dev.WMQJMSListener"/>
+      <devServiceMap updatedName="global.Run" name="dev.Run"/>
+      <devServiceMap updatedName="global.Prototype" name="dev.Prototype"/>
+      <devServiceMap updatedName="global.Dispatch" name="dev.Dispatch"/>
+    </DevServiceMaps>
+    <DevEndpointMaps>
+      <devEndpointMap updatedName="global.CBR.Entry" name="dev.CBR.Entry"/>
+      <devEndpointMap updatedName="global.DBService.Entry" name="dev.DBService.Entry"/>
+      <devEndpointMap updatedName="global.Exit" name="dev.Exit"/>
+      <devEndpointMap updatedName="global.Fault" name="dev.Fault"/>
+      <devEndpointMap updatedName="global.RME" name="dev.RME"/>
+      <devEndpointMap updatedName="global.Run.Entry" name="dev.Run.Entry"/>
+      <devEndpointMap updatedName="global.Tracking" name="dev.Tracking"/>
+      <devEndpointMap updatedName="global.Transform.Entry" name="dev.Transform.Entry"/>
+      <devEndpointMap updatedName="global.XMLServer.Entry" name="dev.XMLServer.Entry"/>
+      <devEndpointMap updatedName="global.MessageListener" name="dev.MessageListener"/>
+      <devEndpointMap updatedName="global.Prototype.Entry" name="dev.Prototype.Entry"/>
+      <devEndpointMap updatedName="global.SplitJoinForEach.Entry" name="dev.SplitJoinForEach.Entry"/>
+      <devEndpointMap updatedName="global.SplitJoinParallel.Entry" name="dev.SplitJoinParallel.Entry"/>
+      <devEndpointMap updatedName="global.Pickup.Entry" name="dev.Pickup.Entry"/>
+      <devEndpointMap updatedName="global.Drop.Entry" name="dev.Drop.Entry"/>
+      <devEndpointMap updatedName="global.Splitter.Entry" name="dev.Splitter.Entry"/>
+      <devEndpointMap updatedName="global.WMQJMSSender.Entry" name="dev.WMQJMSSender.Entry"/>
+      <devEndpointMap updatedName="global.WMQJMSSender.Fault" name="dev.WMQJMSSender.Fault"/>
+      <devEndpointMap updatedName="global.WMQJMSSender.Exit" name="dev.WMQJMSSender.Exit"/>
+      <devEndpointMap updatedName="global.WMQJMSSender.RME" name="dev.WMQJMSSender.RME"/>
+      <devEndpointMap updatedName="global.WMQJMSListener.Entry" name="dev.WMQJMSListener.Entry"/>
+      <devEndpointMap updatedName="global.WMQJMSListener.Fault" name="dev.WMQJMSListener.Fault"/>
+      <devEndpointMap updatedName="global.WMQJMSListener.Exit" name="dev.WMQJMSListener.Exit"/>
+      <devEndpointMap updatedName="global.WMQJMSListener.RME" name="dev.WMQJMSListener.RME"/>
+      <devEndpointMap updatedName="global.Dispatch.Entry" name="dev.Dispatch.Entry"/>
+    </DevEndpointMaps>
+  </DevEnvRules>
+  <ServiceRules>
+    <ServiceRule type="DatabaseServiceType">
+      <Param name="driverClassname"/>
+      <Param name="timeout"/>
+      <Param name="controlNumber"/>
+      <Param name="connections" type="XML"/>
+    </ServiceRule>
+    <ServiceRule type="BPELServiceType">
+      <Param name="stagingDir"/>
+      <Param name="enableAuditTrails"/>
+      <Param name="callbackURL"/>
+      <Param name="persistence" type="XML"/>
+    </ServiceRule>
+    <ServiceRule type="FilePollingServiceType">
+      <Param name="sourceDir"/>
+      <Param name="period"/>
+    </ServiceRule>
+    <ServiceRule type="XMLServiceType">
+      <Param name="controlInfo"/>
+      <Param name="storageLocation"/>
+    </ServiceRule>
+    <ServiceRule type="SonicConnect">
+      <Param name="stagingDirectory"/>
+    </ServiceRule>
+    <ServiceRule type="SplitJoinForEach">
+      <Param name="timeout"/>
+      <Param name="calledAddress"/>
+    </ServiceRule>
+    <ServiceRule type="SplitJoinParallel">
+      <Param name="timeout"/>
+      <Param name="calledAddresses"/>
+    </ServiceRule>
+    <ServiceRule type="DispatchServiceType">
+      <Param name="timeout"/>
+      <Param name="qos"/>
+      <Param name="destination"/>
+    </ServiceRule>
+    <ServiceRule type="WMQJMSSender">
+      <Param name="Connection_Factory_Properties"/>
+      <Param name="Primary_Connection_Max_Attempts"/>
+      <Param name="Primary_Connection_Retry_Interval"/>
+      <Param name="Alternate_Connection_Factory_Properties"/>
+      <Param name="Alternate_Connection_Max_Attempts"/>
+      <Param name="Alternate_Connection_Retry_Interval"/>
+      <Param name="Connection_Pool_Properties"/>
+    </ServiceRule>
+    <ServiceRule type="WMQJMSListener">
+      <Param name="Connection_Factory_Properties"/>
+      <Param name="Primary_Connection_Max_Attempts"/>
+      <Param name="Primary_Connection_Retry_Interval"/>
+      <Param name="Alternate_Connection_Factory_Properties"/>
+      <Param name="Alternate_Connection_Max_Attempts"/>
+      <Param name="Alternate_Connection_Retry_Interval"/>
+      <Param name="Connection_Pool_Properties"/>
+    </ServiceRule>
+  </ServiceRules>
+  <EndpointRules>
+    <EndpointRule type="JMSType">
+      <Param name="type"/>
+      <Param name="destination"/>
+    </EndpointRule>
+  </EndpointRules>
+  <ConnectionRules>
+    <ConnectionRule type="JMSType">
+      <Param name="url"/>
+      <Param name="user"/>
+      <Param name="password"/>
+      <Param name="SSL_CA_CERTIFICATES_DIR"/>
+      <Param name="SSL_CERTIFICATE_CHAIN"/>
+      <Param name="SSL_PRIVATE_KEY"/>
+      <Param name="SSL_PRIVATE_KEY_PASSWORD"/>
+      <Param name="SSL_CERTIFICATE_CHAIN_FORM"/>
+      <Param name="SSL_CIPHER_SUITES"/>
+      <Param name="SSL_PROVIDER_CLASS"/>
+      <Param name="SSL_JSSE_KEY_STORE_TYPE"/>
+      <Param name="SSL_JSSE_KEY_STORE_LOCATION"/>
+      <Param name="SSL_JSSE_KEY_STORE_PASSWORD"/>
+      <Param name="SSL_JSSE_KEY_STORE_KEY_ALIAS"/>
+      <Param name="SSL_JSSE_KEY_STORE_KEY_PASSWORD"/>
+      <Param name="SSL_JSSE_TRUST_STORE_TYPE"/>
+      <Param name="SSL_JSSE_TRUST_STORE_LOCATION"/>
+      <Param name="SSL_JSSE_TRUST_STORE_PASSWORD"/>
+      <Param name="SSL_JSSE_TRUST_MANAGER"/>
+    </ConnectionRule>
+  </ConnectionRules>
+</TailoringRules>

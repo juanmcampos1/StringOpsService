@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.aurea.cx.messenger.example</groupId>
+	<artifactId>StringOpsService</artifactId>
+	<version>2.0-SNAPSHOT</version>
+	<name>Plain Java Sample Service</name>
+	<description>Plain Java Sample Service for Sonic ESB</description>
+	<packaging>esbstyp</packaging>
+
+	<properties>
+		<sonicesb.version>10.0.9</sonicesb.version>
+		<sonicesb-plugin.version>10.0.9</sonicesb-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>sonic-releases</id>
+			<url>https://int-factory.aurea.com/nexus/content/repositories/sonic-releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>sonic-releases</id>
+			<url>https://int-factory.aurea.com/nexus/content/repositories/sonic-releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.aurea.sonic.esb</groupId>
+			<artifactId>sonicesb-dependencies</artifactId>
+			<version>${sonicesb.version}</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.aurea.maven.plugins</groupId>
+				<artifactId>sonicesb-maven-plugin</artifactId>
+				<version>${sonicesb-plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<sonicesbSourceDirectory>target/generated-sources/annotations/sonicesb</sonicesbSourceDirectory>
+					<copyXarToDeploy>true</copyXarToDeploy>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

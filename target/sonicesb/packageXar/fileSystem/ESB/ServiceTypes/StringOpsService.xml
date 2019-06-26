@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xq:serviceType xmlns:xq="http://www.sonicsw.com/sonicxq" name="StringOpsService"
+    factoryClass="com.sonicsw.xq.service.executor.POJOExecutor">
+  <xq:validParams>
+    <xq:init>
+      <xq:stringParam name="verbose" required="false">
+        <xq:default edittable="true" editAsRef="false">false</xq:default>
+      </xq:stringParam>
+      <xq:stringParam name="com.sonicsw.xq.service.executor.POJOExecutor.delegate"
+          required="false">
+        <xq:default edittable="true" editAsRef="false">com.aurea.cx.messenger.example.StringOpsService.StringOpsService</xq:default>
+      </xq:stringParam>
+    </xq:init>
+    <xq:runtime>
+      <xq:stringParam name="operationId"/>
+    </xq:runtime>
+  </xq:validParams>
+  <xq:classLoading>
+    <xq:serviceInstance>
+      <xq:classpath_list>
+        <xq:classpath>sonicfs:///ESBResources/com/aurea/cx/messenger/example/StringOpsService/2.0-SNAPSHOT/StringOpsService-2.0-SNAPSHOT.jar</xq:classpath>
+      </xq:classpath_list>
+    </xq:serviceInstance>
+  </xq:classLoading>
+</xq:serviceType>
